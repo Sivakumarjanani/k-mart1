@@ -1,0 +1,670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cynosure Corporate Solutions</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+  <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
+  <script src="../node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+
+  <style>
+    /* Custom styles to retain background and header text styling */
+    header {
+      background-image: url("../piicc.jpg"); /* Replace with your image path */
+      background-size: cover;
+      background-position: center;
+      min-height: 100vh;
+      position: relative;
+    }
+
+    .header-wrapper {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      max-width: 1250px;
+      margin: 20px auto;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .logo-standalone {
+      height: 80px;
+      width: auto;
+      background: white;
+      border-radius: 50%;
+      padding: 10px;
+      box-shadow: 0 0 15px rgba(0, 0, 0, 0.4);
+      margin-top: 30px;
+    }
+
+    .header-1 {
+      flex-grow: 1;
+      background: rgba(110, 194, 199, 0.6); /* Royal transparent */
+      padding: 15px 30px;
+      margin-top: 30px;
+      border-top-left-radius: 60px;
+      border-bottom-left-radius: 60px;
+      border-top-right-radius: 60px;
+      border-bottom-right-radius: 60px;
+      backdrop-filter: blur(6px);
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .navbar {
+      background: transparent !important;
+      padding: 0;
+    }
+
+    .nav-link {
+      color: white !important;
+      font-weight: 500;
+      padding: 10px 18px;
+      border-radius: 5px;
+      transition: background 0.3s ease;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-link:hover {
+      background-color: rgba(255, 255, 255, 0.15);
+    }
+    h1{
+      font-size: 50px;
+      color: #fff;
+      margin: 120px 30px 30px 30px;
+
+    }
+    .features-section {
+      padding: 40px 20px;
+      background-color: #f9f9f9;
+    }
+
+    .features-section img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+    }
+
+    .feature-text {
+      padding: 20px;
+    }
+    .cyno-logo {
+  opacity: 5; /* Slightly transparent */
+  filter: drop-shadow(1px 1px 2px rgba(201, 184, 184, 0.6));
+  transition: opacity 0.3s ease;
+}
+
+.cyno-logo:hover {
+  opacity: 1; /* Full opacity on hover */
+} 
+.staffing-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 20px;
+    }
+     
+   .score h2{
+    color:  rgb(16, 147, 199);
+    font-size: 40px;
+   }
+
+  .industries img {
+    width: 40px;
+    height: auto;
+  }
+  .bi-check{
+    font-size: 40px;
+    color:  rgb(16, 147, 199);
+  }
+     #helpModal img{
+      width: 400px;
+      height: 200px;
+     }
+    
+  .same-height {
+    height: 140px; /* or any height you want */
+    object-fit: cover;
+  }
+
+  .industry-card {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 15px;
+    padding: 15px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .industry-card:hover {
+    transform: translateY(-6px) scale(1.03);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+  }
+  .industry-image {
+    max-width: 100px;
+    margin-bottom: 10px;
+  }
+  .glass-banner {
+    background: rgba(21, 206, 206, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+    @media (min-width: 768px) {
+      .staffing-img {
+        height: 250px;
+      }
+    }
+  
+</style>
+
+
+  
+</head>
+<body>
+
+  <!-- Header with background image and sticky transparent navbar -->
+  <header>
+    <!-- LOGO + HEADER WRAPPER -->
+ <div class="header-wrapper">
+   <!-- Logo Outside Header -->
+   <img src="cyno-logo-blue.png" alt="Logo" class="logo-standalone" />
+
+   <!-- Header with Navbar -->
+   <div class="header-1">
+     <nav class="navbar navbar-expand-lg navbar-dark">
+       <div class="container-fluid px-0">
+         <button class="navbar-toggler ms-auto" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+           <span class="navbar-toggler-icon"></span>
+         </button>
+         <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+           <ul class="navbar-nav">
+             <li class="nav-item"><a class="nav-link" href="body.html">Home</a></li>
+             <li class="nav-item"><a class="nav-link" href="services-cyno.html">Services</a></li>
+             <li class="nav-item"><a class="nav-link" href="job-cyno.html">Job Openings</a></li>
+             <li class="nav-item"><a class="nav-link" href="#">Jobseeker</a></li>
+             <li class="nav-item"><a class="nav-link" data-bs-toggle="modal" data-bs-target="#contactModal" href="#">Contact</a></li>
+           </ul>
+         </div>
+       </div>
+     </nav>
+   </div>
+ </div>
+ <div class="container text-center header-content">
+  <h1>Cynosure Corporate Solutions<br>Recruitment and Staffing Solutions</h1>
+  <p>Explore opportunities, connect with us, and grow your career.</p>
+</div>
+
+
+</header>
+    <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content">
+            
+            <div class="modal-header">
+              <h5 class="modal-title" id="contactModalLabel">Contact Information</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+      
+            <div class="modal-body">
+              <p class="mb-2"><p style="font-size: 30px; color: rgb(16, 147, 199);">Location</p> <a href="#" style="text-decoration: none; color: black;">5/42, Second Cross Street, Navarathna Gardens, Ekkattuthangal, Chennai 600032</a></p>
+              <p class="mb-2"><p style="font-size: 30px; color: rgb(16,147,199);">Call-us</p><a href="#" style="text-decoration: none; color: black;" >(+91) 72007 12347</a></p>
+              <p class="mb-2"><p style="font-size: 30px; color: rgb(16,147,199);">Email-us</p> <a href="#" style="text-decoration: none; color: black;">corp@cynosurejobs.com</a></p>
+            </div>
+      
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+      
+          </div>
+        </div>
+      </div>
+      
+
+      <div class="offcanvas offcanvas-top" tabindex="-1" id="jobOpeningsCanvas" aria-labelledby="jobOpeningsCanvasLabel" 
+      style="background: url('your-image.jpg') center center / cover no-repeat;">
+ 
+   <!-- Overlay for dark transparency -->
+   <div class="offcanvas-overlay" style="
+     background-color: rgba(0, 0, 0, 0.253);
+     width: 100%;
+     height: 100%;
+     position: absolute;
+     top: 0;
+     left: 0;
+     z-index: 1;">
+   </div>
+ 
+   <div class="offcanvas-header position-relative" style="z-index: 2;">
+     <h5 class="offcanvas-title text-white" id="jobOpeningsCanvasLabel">Job Openings</h5>
+     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+   </div>
+ 
+   <div class="offcanvas-body text-white position-relative" style="z-index: 2;">
+     <p>Explore our current openings and apply now!</p>
+     <!-- Add your job listings or links here -->
+   </div>
+ </div>
+
+    <!-- Header content with text -->
+   
+
+  <section class="features-section">
+    <div class="container">
+      <div class="row align-items-center mb-5">
+        <div class="col-md-6">
+          <img src="strategy-pic.jpg" alt="Recruitment Image">
+        </div>
+        <div class="col-md-6 feature-text">
+          <h4>Strategic Talent Acquisition</h4>
+          <p>
+            We offer complete assistance in employee selection, from screening to evaluation.
+            Our expert team ensures a rigorous and objective hiring process with industry-standard SLAs.
+          </p>
+        </div>
+      </div>
+
+      <div class="row align-items-center flex-md-row-reverse">
+        <div class="col-md-6">
+          <img src="./compensation.jpg" alt="Staffing Image">
+        </div>
+        <div class="col-md-6 feature-text">
+          <h4>Comprehensive Staffing Support</h4>
+          <p>
+            We provide trusted ongoing support in staffing for sectors like FMCG, retail, finance, and telecom.
+            Our services include sourcing, screening, and dedicated client support to build strong workforces.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Why Choose Us Section -->
+<section class="py-5 bg-light" style="font-size: 13px;">
+  <div class="container">
+    <div class="row align-items-center">
+      
+      <!-- Left Side: 2x2 Images -->
+      <div class="col-md-6 mb-4 mb-md-0" data-aos="fade-right">
+        <div class="row g-3">
+          <div class="col-6">
+            <img src="../choose-1.jpg" alt="Why Choose Us 1"
+                 class="img-fluid rounded shadow w-100 same-height">
+          </div>
+          <div class="col-6">
+            <img src="../choose-2.jpg" alt="Why Choose Us 2"
+                 class="img-fluid rounded shadow w-100 same-height">
+          </div>
+          <div class="col-6">
+            <img src="../choose-3.jpg" alt="Why Choose Us 3"
+                 class="img-fluid rounded shadow w-100 same-height">
+          </div>
+          <div class="col-6">
+            <img src="choose-4.jpg" alt="Why Choose Us 4"
+                 class="img-fluid rounded shadow w-100 same-height">
+          </div>
+        </div>
+      </div>
+        <!-- Right Side: Text -->
+      <div class="col-md-6" data-aos="fade-left">
+        <h3 class="mb-4 text-center text-md-start">Why Choose Us</h3>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <p><i class="bi bi-check-circle-fill text-success me-2"></i>Vast understanding of industry talent needs</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p><i class="bi bi-check-circle-fill text-success me-2"></i>Complete assistance during employee selection</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p><i class="bi bi-check-circle-fill text-success me-2"></i>Dedicated staffing solution support</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p><i class="bi bi-check-circle-fill text-success me-2"></i>Effective recruitment strategies</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p><i class="bi bi-check-circle-fill text-success me-2"></i>Years of service excellence and dedication</p>
+          </div>
+          <div class="col-md-6 mb-3">
+            <p><i class="bi bi-check-circle-fill text-success me-2"></i>Support in building a productive workforce</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- Stats Section -->
+<div class="py-5 bg-light text-center score ">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Card 1 -->
+      <div class="col-md-3 col-6 ">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body">
+            <h2 class="fw-bold counter" >1000+</h2>
+            <p class="mb-0">Projects Executed</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="col-md-3 col-6">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body">
+            <h2 class="fw-bold counter" >20+</h2>
+            <p class="mb-0">States Covered</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="col-md-3 col-6">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body">
+            <h2 class="fw-bold counter">25+</h2>
+            <p class="mb-0">Years of Experience</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Card 4 -->
+      <div class="col-md-3 col-6">
+        <div class="card border-0 shadow h-100">
+          <div class="card-body">
+            <h2 class="fw-bold counter"">100000+</h2>
+            <p class="mb-0">Recruitment & Staffing</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+  </section>
+
+<!-- Section -->
+<section class="text-center py-5 text-white animate-section" style="
+background-image: linear-gradient(rgba(22, 67, 85, 0.8), rgba(49, 194, 187, 0.8)), url('help.jpg'); 
+background-size: cover; 
+background-position: center;
+overflow: hidden;">
+        
+  <div class="container animate-content">
+    <h2 class="mb-4 fw-bold">We Can Help You</h2>
+    <button type="button" class="btn btn-warning btn-animate" data-bs-toggle="modal" data-bs-target="#helpModal">
+      All services
+    </button>
+  </div>
+</section>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="helpModal" tabindex="-1" aria-labelledby="helpModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="helpModalLabel">Our Staffing Services</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row text-center g-4">
+
+          <div class="col-md-6">
+            <div class="position-relative">
+              <img src="permanent-staff.jpg" alt="Permanent Staffing" class="img-fluid staffing-img shadow-sm mb-2">
+              <button class="btn btn-outline-primary position-absolute bottom-0 start-50 translate-middle">Read More</button>
+            </div>
+            <h6>Permanent Staffing</h6>
+          </div>
+
+          <div class="col-md-6">
+            <div class="position-relative">
+              <img src="contract-staff.jpg" alt="Contract Staffing" class="img-fluid staffing-img shadow-sm mb-2">
+              <button class="btn btn-outline-primary position-absolute bottom-0 start-50 translate-middle">Read More</button>
+            </div>
+            <h6>Contract Staffing</h6>
+          </div>
+
+          <div class="col-md-6">
+            <div class="position-relative">
+              <img src="project-staff.png" alt="Project Based Hiring" class="img-fluid staffing-img shadow-sm mb-2">
+              <button class="btn btn-outline-primary position-absolute bottom-0 start-50 translate-middle">Read More</button>
+            </div>
+            <h6>Project Based Hiring</h6>
+          </div>
+
+          <div class="col-md-6">
+            <div class="position-relative">
+              <img src="temporary-staff.jpg" alt="Temporary Staffing" class="img-fluid staffing-img shadow-sm mb-2 ">
+              <button class="btn btn-outline-primary position-absolute bottom-0 start-50 translate-middle">Read More</button>
+            </div>
+            <h6>Temporary Staffing</h6>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+<section class="py-5 text-dark" style="background-color: rgb(95, 211, 211);">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-md-10">
+        <div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+          <div class="carousel-inner rounded shadow-sm">
+
+            <!-- Slide 1 -->
+            <div class="carousel-item active">
+              <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start p-4">
+                  <h2 class="fw-bold mb-3">Navigating recruitment challenges</h2>
+                  <p>Explore moments captured with pride — each frame tells a story of success, passion, and excellence.</p>
+                </div>
+                <div class="col-md-6">
+                  <img src="slide-1.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;" alt="Slide 1">
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 2 -->
+            <div class="carousel-item">
+              <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start p-4">
+                  <h2 class="fw-bold mb-3">Maximizing efficiency for candidate sourcing</h2>
+                  <p>We've worked in 20+ states, building bridges between opportunities and talent across the country.</p>
+                </div>
+                <div class="col-md-6">
+                  <img src="../slide-2.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;" alt="Slide 2">
+                </div>
+              </div>
+            </div>
+
+            <!-- Slide 3 -->
+            <div class="carousel-item">
+              <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start p-4">
+                  <h2 class="fw-bold mb-3">Unlocking the power of experiences</h2>
+                  <p>With 25+ years of expertise, we deliver recruitment and staffing solutions that truly make a difference.</p>
+                </div>
+                <div class="col-md-6">
+                  <img src="../slide-3.jpg" class="d-block w-100" style="height: 300px; object-fit: cover;" alt="Slide 3">
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Controls -->
+          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          </button>
+          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="py-5 industries bg-light">
+  <div class="container">
+    <div class="row g-4">
+
+      <!-- Left Side Banner -->
+      <div class="col-lg-4" data-aos="zoom-in-right">
+        <div class="glass-banner h-100 d-flex flex-column justify-content-center align-items-center">
+         
+          <h4 class="fw-bold">Industries We Serve</h4>
+          <p class="text-muted">At Cynosure Corporate Solutions,we dont just cater to industries we understand them. Our expertise spans across Healthcare, IT, Retail, Manufacturing, Education, Finance, and more. Whether it’s talent acquisition, workforce strategy, or recruitment innovation, We believe in building partnerships, not just placements — helping businesses grow with the right people, in the right roles, at the right time.</p>
+        </div>
+      </div>
+
+      <!-- Right Side Cards -->
+      <div class="col-lg-8" data-aos="fade-up">
+        <div class="row g-3">
+          <!-- 18 Unique Industry Cards -->
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-1.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Manufacturing</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-2.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Automobile</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-3.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Accounting</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-4.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Telecom</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-5.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Chemical</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-6.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Engineering</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-7.png" class="industry-image" alt=""><p class="fw-semibold mb-0">IT</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-17.png" class="industry-image" alt=""><p class="fw-semibold mb-0">BFSI</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-9.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Travel</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-10.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Meadia</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-11.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Oil & gas</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-12.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Retail</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-13.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Healthcare</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-14.png" class="industry-image" alt=""><p class="fw-semibold mb-0">E-commerce</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-15.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Pharmaceuticals</p></div></div>
+          <div class="col-6 col-md-3"><div class="industry-card text-center"><img src="../serve-16.png" class="industry-image" alt=""><p class="fw-semibold mb-0">Supplychain</p></div></div>
+          
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+ 
+<!-- Get in Touch Section -->
+<section class="position-relative text-white py-5" style="background: url('touch.jpg') center center / cover no-repeat;">
+  <!-- Overlay -->
+  <div class="position-absolute top-0 start-0 w-100 h-100" style="background-color: rgba(0, 0, 0, 0.6); z-index: 1;"></div>
+
+  <!-- Content -->
+  <div class="container position-relative" style="z-index: 2;">
+    <div class="row justify-content-end">
+      <div class="col-lg-6">
+        <h3 class="mb-4 text-white">Get in Touch</h3>
+        <form>
+          <div class="row g-3">
+            <!-- Name -->
+            <div class="col-md-6">
+              <input type="text" class="form-control" placeholder="Your Name" required>
+            </div>
+            <!-- Email -->
+            <div class="col-md-6">
+              <input type="email" class="form-control" placeholder="Your Email" required>
+            </div>
+            <!-- Subject -->
+            <div class="col-12">
+              <input type="text" class="form-control" placeholder="Subject" required>
+            </div>
+            <!-- Message -->
+            <div class="col-12">
+              <textarea class="form-control" rows="5" placeholder="Your Message" required></textarea>
+            </div>
+            <!-- Submit Button -->
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-primary px-4">Send Message</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="bg-dark text-white pt-5 pb-3">
+  <div class="container">
+    <div class="row">
+
+      <!-- Address Section -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">Address</h5>
+        <p>5/42, Second Cross Street, Navarathna Gardens</p>
+        <p>Ekkattuthangal, Chennai 600032</p>
+        <p>TamilNadu, India</p>
+        <p class="bi bi-mailbox"> <a href="mailto:corp@cynosurejobs.com" class="text-white">corp@cynosurejobs.com</a></p>
+        <p class="bi bi-telephone"> <a href="tel:+917200712347" class="text-white">+91-7200712347</a></p>
+        <div>
+          <span class="bi bi-facebook"></span>
+          <span class="bi bi-twitter"></span>
+          <span class="bi bi-instagram"></span>
+          <span class="bi bi-linkedin"></span>
+          <span class="bi bi-youtube"></span>
+        </div>
+      </div>
+
+      <!-- Recent Posts Section -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">Recent Posts</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none">Recruitment Trends 2024 <small class="text-muted">– April, 2024</small></a></li>
+          <li><a href="#" class="text-white text-decoration-none">Recruitment Challenges 2024 <small class="text-muted">– April, 2024</small></a></li>
+        </ul>
+      </div>
+
+      <!-- Pages Section -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">Pages</h5>
+        <ul class="list-unstyled">
+          <li><a href="#" class="text-white text-decoration-none">About Us</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Job Openings</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Careers</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Privacy Policy</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Disclaimer</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Terms and Conditions</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Sitemap</a></li>
+          <li><a href="#" class="text-white text-decoration-none">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Subscribe Section -->
+      <div class="col-md-3 mb-4">
+        <h5 class="fw-bold">Subscribe</h5>
+        <p>Be the First to Know About New Job Opportunities with us – Sign Up for Job Alerts.</p>
+        <form>
+          <div class="mb-2">
+            <input type="email" class="form-control" placeholder="Enter your email" required>
+          </div>
+          <button type="submit" class="btn btn-outline-primary w-100">Get Job Alerts</button>
+        </form>
+
+        <!-- Cynosure Logo -->
+        <div class="mt-4">
+          <img src="../cyno-logo-blue.png" alt="Cynosure Logo" class="img-fluid" style="max-width: 150px;">
+        </div>
+      </div>
+
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

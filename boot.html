@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kmart - Women & Kids Clothing</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700;900&display=swap" rel="stylesheet" />
+  <style>
+    /* CSS VARIABLES */
+    :root {
+      --blue-dark: #004aad;
+      --blue-light: #1a73e8;
+      --gray-light: #f5f7fa;
+      --gray-dark: #555;
+      --white: #ffffff;
+      --font-family: 'Poppins', sans-serif;
+      --transition-fast: 0.3s ease;
+    }
+
+    /* RESET */
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body, h1, h2, h3, p, ul, ol, li, a, button {
+      margin: 0; padding: 0; border: 0; font-weight: normal;
+    }
+    body {
+      font-family: var(--font-family);
+      background: var(--gray-light);
+      color: var(--blue-dark);
+      line-height: 1.6;
+      min-height: 100vh;
+      scroll-behavior: smooth;
+    }
+    a {
+      text-decoration: none;
+      color: var(--blue-dark);
+    }
+    a:hover, a:focus {
+      color: var(--blue-light);
+      outline: none;
+    }
+    button {
+      font-family: var(--font-family);
+      cursor: pointer;
+      background: none;
+      border: none;
+      color: inherit;
+    }
+    img {
+      display: block;
+      max-width: 100%;
+      height: auto;
+      user-select: none;
+    }
+
+    /* HEADER */
+    header {
+      position: sticky;
+      top: 0;
+      background: var(--white);
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      z-index: 10000;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      font-weight: 900;
+      font-size: 1.5rem;
+      color: var(--blue-dark);
+      gap: 10px;
+      user-select: none;
+    }
+    .logo svg {
+      width: 36px;
+      height: 36px;
+      fill: var(--blue-dark);
+      flex-shrink: 0;
+    }
+    nav {
+      display: flex;
+      gap: 35px;
+    }
+    nav a {
+      font-weight: 600;
+      font-size: 1rem;
+      padding: 5px;
+      position: relative;
+      transition: color 0.3s ease;
+    }
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0; bottom: -5px;
+      width: 0;
+      height: 2px;
+      background: var(--blue-light);
+      transition: width 0.3s ease;
+    }
+    nav a:hover::after, nav a:focus::after {
+      width: 100%;
+    }
+
+    /* HAMBURGER MENU */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background: var(--blue-dark);
+      border-radius: 2px;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 480px;
+      color: var(--white);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      overflow: hidden;
+      background: var(--blue-dark);
+      user-select: none;
+    }
+    .hero-slider {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-slider .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 1s ease;
+    }
+    .hero-slider .slide.active {
+      opacity: 1;
+      z-index: 1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 600px;
+      background: rgba(0, 74, 173, 0.75);
+      padding: 45px 40px;
+      border-radius: 25px;
+    }
+    .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      font-weight: 900;
+      letter-spacing: 2px;
+    }
+    .hero-content p {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      font-weight: 500;
+      line-height: 1.4;
+    }
+    .btn-primary {
+      background: var(--white);
+      color: var(--blue-dark);
+      border-radius: 40px;
+      border: none;
+      padding: 16px 50px;
+      font-weight: 700;
+      font-size: 1.2rem;
+      box-shadow: 0 6px 18px rgba(255, 255, 255, 0.7);
+      transition: background-color 0.3s ease, color 0.3s ease;
+      user-select: none;
+    }
+    .btn-primary:hover, .btn-primary:focus {
+      background: var(--blue-light);
+      color: var(--white);
+      outline: none;
+    }
+
+    /* COLLECTIONS */
+    .collections {
+      max-width: 1200px;
+      margin: 100px auto 90px;
+      padding: 0 40px;
+    }
+    .collections h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 60px;
+      color: var(--blue-dark);
+      text-align: center;
+    }
+    .carousel {
+      position: relative;
+      display: flex;
+      overflow-x: auto;
+      gap: 28px;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+      padding-bottom: 20px;
+      user-select: none;
+    }
+    .carousel::-webkit-scrollbar {
+      display: none;
+    }
+    .collection-card {
+      min-width: 280px;
+      border-radius: 25px;
+      background: var(--white);
+      box-shadow: 0 8px 26px rgba(0, 74, 173, 0.12);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      overflow: hidden;
+      flex-shrink: 0;
+    }
+    .collection-card:hover, .collection-card:focus {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 38px rgba(0, 74, 173, 0.24);
+      outline: none;
+    }
+    .collection-card img {
+      border-radius: 25px 25px 0 0;
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+      display: block;
+    }
+    .collection-card:hover img, .collection-card:focus img {
+      transform: scale(1.1);
+    }
+    .collection-info {
+      padding: 22px 28px;
+      color: var(--blue-dark);
+    }
+    .collection-info h3 {
+      font-weight: 700;
+      font-size: 1.5rem;
+      margin-bottom: 12px;
+    }
+    .collection-info p {
+      font-weight: 400;
+      font-size: 1rem;
+      opacity: 0.75;
+      line-height: 1.5;
+    }
+
+    /* Carousel arrows */
+    .carousel-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: var(--blue-light);
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--white);
+      font-size: 30px;
+      cursor: pointer;
+      box-shadow: 0 5px 15px rgba(26, 115, 232, 0.7);
+      transition: background-color 0.3s ease;
+      user-select: none;
+      z-index: 10;
+    }
+    .carousel-arrow:hover, .carousel-arrow:focus {
+      background-color: var(--blue-dark);
+      outline: none;
+    }
+    .carousel-arrow.left {
+      left: -35px;
+    }
+    .carousel-arrow.right {
+      right: -35px;
+    }
+
+    /* ABOUT SECTION */
+    .about {
+      max-width: 1200px;
+      margin: 90px auto 110px;
+      padding: 0 40px;
+      display: flex;
+      gap: 60px;
+      align-items: center;
+      flex-wrap: wrap;
+      user-select: none;
+    }
+    .about-text {
+      flex: 1 1 460px;
+      font-size: 1.2rem;
+      line-height: 1.75;
+      color: var(--blue-dark);
+      font-weight: 500;
+    }
+    .about-text h2 {
+      font-size: 3.3rem;
+      font-weight: 900;
+      margin-bottom: 35px;
+      color: var(--blue-dark);
+    }
+    .about-image {
+      flex: 1 1 460px;
+      border-radius: 45px;
+      overflow: hidden;
+      box-shadow: 0 22px 58px rgba(0, 74, 173, 0.16);
+      cursor: pointer;
+      transition: transform 0.45s ease;
+    }
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+    .about-image:hover img {
+      transform: scale(1.07);
+    }
+    .about-image:hover {
+      transform: translateY(-15px);
+    }
+
+    /* PRODUCTS GRID */
+    .products-section {
+      max-width: 1200px;
+      margin: 90px auto 110px;
+      padding: 0 40px;
+    }
+    .products-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 45px;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+    .products-header h2 {
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--blue-dark);
+      user-select: none;
+    }
+    .filter-group {
+      display: flex;
+      gap: 15px;
+      flex-wrap: wrap;
+      user-select: none;
+    }
+    .filter-group select {
+      padding: 10px 18px;
+      border-radius: 10px;
+      border: 2px solid var(--blue-dark);
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--blue-dark);
+      background: var(--white);
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+      min-width: 130px;
+    }
+    .filter-group select:hover, .filter-group select:focus {
+      border-color: var(--blue-light);
+      outline: none;
+    }
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(280px,1fr));
+      gap: 30px;
+      user-select: none;
+    }
+    .product-card {
+      background: var(--white);
+      border-radius: 20px;
+      box-shadow: 0 12px 38px rgba(0,74,173,0.14);
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .product-card:hover, .product-card:focus {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 58px rgba(0,74,173,0.3);
+      outline: none;
+    }
+    .product-card img {
+      border-radius: 20px 20px 0 0;
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .product-card:hover img, .product-card:focus img {
+      transform: scale(1.1);
+    }
+    .product-info {
+      padding: 18px 22px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .product-info h3 {
+      font-size: 1.3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: var(--blue-dark);
+    }
+    .product-info p {
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0.8;
+      margin-bottom: 18px;
+    }
+    .product-price {
+      font-weight: 900;
+      font-size: 1.2rem;
+      color: var(--blue-light);
+    }
+
+    /* TESTIMONIALS */
+    .testimonials {
+      background: var(--blue-dark);
+      padding: 75px 40px;
+      color: var(--white);
+      user-select: none;
+    }
+    .testimonials h2 {
+      text-align: center;
+      font-size: 3rem;
+      font-weight: 900;
+      margin-bottom: 60px;
+    }
+    .testimonials-slider {
+      max-width: 900px;
+      margin: 0 auto;
+      position: relative;
+    }
+    .testimonial-card {
+      display: none;
+      background: rgba(255,255,255,0.1);
+      border-radius: 30px;
+      padding: 40px 35px;
+      text-align: center;
+      font-size: 1.2rem;
+      font-weight: 500;
+      line-height: 1.6;
+      box-shadow: 0 20px 48px rgba(255,255,255,0.12);
+      min-height: 160px;
+    }
+    .testimonial-card.active {
+      display: block;
+    }
+    .testimonial-author {
+      margin-top: 30px;
+      font-weight: 700;
+      font-size: 1rem;
+      opacity: 0.7;
+    }
+    .testimonials-arrow {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: var(--white);
+      color: var(--blue-dark);
+      border-radius: 50%;
+      width: 38px;
+      height: 38px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+      user-select: none;
+      transition: background-color 0.3s ease;
+      border: none;
+    }
+    .testimonials-arrow:hover, .testimonials-arrow:focus {
+      background: var(--blue-light);
+      color: var(--white);
+      outline: none;
+    }
+    .testimonials-arrow.left {
+      left: -50px;
+    }
+    .testimonials-arrow.right {
+      right: -50px;
+    }
+
+    /* NEWSLETTER */
+    .newsletter {
+      background: var(--blue-light);
+      padding: 75px 40px;
+      color: var(--white);
+      text-align: center;
+      user-select: none;
+    }
+    .newsletter h2 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      margin-bottom: 25px;
+    }
+    .newsletter p {
+      font-size: 1.15rem;
+      font-weight: 500;
+      margin-bottom: 30px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      opacity: 0.9;
+      line-height: 1.5;
+    }
+    .newsletter-form {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      max-width: 550px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .newsletter-form input[type="email"] {
+      padding: 16px 22px;
+      border-radius: 40px;
+      border: none;
+      font-size: 1.1rem;
+      font-weight: 500;
+      width: 300px;
+      max-width: 100%;
+      outline-offset: 2px;
+      border: 3px solid transparent;
+      transition: border-color 0.3s ease;
+    }
+    .newsletter-form input[type="email"]:focus {
+      border-color: var(--white);
+      outline: none;
+    }
+    .newsletter-form button {
+      padding: 16px 42px;
+      border-radius: 40px;
+      background: var(--white);
+      color: var(--blue-dark);
+      font-weight: 700;
+      font-size: 1.1rem;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .newsletter-form button:hover, .newsletter-form button:
+    .newsletter-form button:hover,
+    .newsletter-form button:focus {
+      background-color: var(--blue-dark);
+      color: var(--white);
+      outline: none;
+    }
+
+    /* FOOTER */
+    footer {
+      background: var(--blue-dark);
+      color: var(--white);
+      padding: 60px 40px;
+      user-select: none;
+    }
+    .footer-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+    .footer-col {
+      flex: 1 1 200px;
+      min-width: 180px;
+    }
+    .footer-col h3 {
+      font-size: 1.4rem;
+      font-weight: 900;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: var(--white);
+    }
+    .footer-col ul {
+      list-style: none;
+    }
+    .footer-col ul li {
+      margin-bottom: 18px;
+    }
+    .footer-col ul li a {
+      font-weight: 400;
+      font-size: 1rem;
+      color: var(--white);
+      opacity: 0.8;
+      transition: opacity 0.3s ease;
+    }
+    .footer-col ul li a:hover,
+    .footer-col ul li a:focus {
+      opacity: 1;
+      outline: none;
+    }
+    .social-icons {
+      display: flex;
+      gap: 20px;
+      margin-top: 15px;
+    }
+    .social-icons a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 36px;
+      height: 36px;
+      background: var(--white);
+      border-radius: 50%;
+      color: var(--blue-dark);
+      font-size: 20px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+    .social-icons a:hover,
+    .social-icons a:focus {
+      background: var(--blue-light);
+      color: var(--white);
+      outline: none;
+    }
+    .footer-bottom {
+      text-align: center;
+      margin-top: 40px;
+      font-size: 0.9rem;
+      font-weight: 500;
+      opacity: 0.7;
+    }
+
+    /* MEDIA QUERIES */
+    @media (max-width: 992px) {
+      header {
+        padding: 12px 24px;
+      }
+      .collections, .about, .products-section, .newsletter, footer {
+        padding: 0 24px;
+      }
+      nav {
+        display: none;
+      }
+      .hamburger {
+        display: flex;
+      }
+      .about {
+        flex-direction: column;
+      }
+      .about-image, .about-text {
+        flex: 1 1 100%;
+      }
+      .carousel-arrow.left {
+        left: 5px;
+      }
+      .carousel-arrow.right {
+        right: 5px;
+      }
+      .testimonials-arrow.left {
+        left: 0;
+      }
+      .testimonials-arrow.right {
+        right: 0;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero-content h1 {
+        font-size: 2.4rem;
+      }
+      .collections h2,
+      .about-text h2,
+      .products-header h2,
+      .testimonials h2,
+      .newsletter h2 {
+        font-size: 2.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="logo" aria-label="Kmart Home">
+    <!-- Sample logo SVG icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M12 2L2 7v7c0 4.97 4.03 9 9 9s9-4.03 9-9V7l-10-5zM8 15v-6l4 3-4 3z" />
+    </svg>
+    Kmart
+  </a>
+  <nav role="navigation" aria-label="Primary Navigation">
+    <a href="#collections" tabindex="0">Collections</a>
+    <a href="#about" tabindex="0">About Us</a>
+    <a href="#products" tabindex="0">Products</a>
+    <a href="#testimonials" tabindex="0">Testimonials</a>
+    <a href="#newsletter" tabindex="0">Subscribe</a>
+  </nav>
+  <button class="hamburger" aria-label="Open Menu" aria-expanded="false" aria-controls="mobile-menu">
+    <div></div><div></div><div></div>
+  </button>
+</header>
+
+<!-- Mobile nav menu -->
+<nav id="mobile-menu" style="display:none; background: var(--white); position: absolute; top: 70px; right: 0; width: 200px; box-shadow: 0 4px 12px rgba(0,0,0,0.15); border-radius: 10px; padding: 15px;">
+  <a href="#collections" style="display:block; padding:10px 5px;">Collections</a>
+  <a href="#about" style="display:block; padding:10px 5px;">About Us</a>
+  <a href="#products" style="display:block; padding:10px 5px;">Products</a>
+  <a href="#testimonials" style="display:block; padding:10px 5px;">Testimonials</a>
+  <a href="#newsletter" style="display:block; padding:10px 5px;">Subscribe</a>
+</nav>
+
+<section class="hero" aria-label="Featured collections and promotions">
+  <div class="hero-slider" aria-live="polite">
+    <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=1200&q=80');"></div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=1200&q=80');"></div>
+    <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=1200&q=80');"></div>
+  </div>
+  <div class="hero-content">
+    <h1>Elegant Women & Kids Clothing</h1>
+    <p>Discover the latest fashion trends and exclusive collections tailored for you and your loved ones.</p>
+    <a href="#collections" class="btn-primary">Explore Now</a>
+  </div>
+</section>
+
+<section class="collections" id="collections" aria-label="Clothing collections">
+  <h2>Our Collections</h2>
+  <button class="carousel-arrow left" aria-label="Scroll collections left" tabindex="0">&#8592;</button>
+  <button class="carousel-arrow right" aria-label="Scroll collections right" tabindex="0">&#8594;</button>
+  <div class="carousel" tabindex="0" aria-roledescription="carousel" aria-label="Clothing collections carousel">
+    <article class="collection-card" tabindex="0">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=400&q=80" alt="Spring Collection for Women" />
+      <div class="collection-info">
+        <h3>Spring Blossom</h3>
+        <p>Fresh colors and styles for the new season.</p>
+      </div>
+    </article>
+    <article class="collection-card" tabindex="0">
+      <img src="https://images.unsplash.com/photo-1542068829-1115f7259450?auto=format&fit=crop&w=400&q=80" alt="Kids Summer Collection" />
+      <div class="collection-info">
+        <h3>Kids Summer</h3>
+        <p>Bright and playful styles for your little ones.</p>
+      </div>
+    </article>
+    <article class="collection-card" tabindex="0">
+      <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=400&q=80" alt="Classic Evening Wear" />
+      <div class="collection-info">
+        <h3>Classic Evening</h3>
+        <p>Elegant designs for special occasions.</p>
+      </div>
+    </article>
+    <article class="collection-card" tabindex="0">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246?auto=format&fit=crop&w=400&q=80" alt="Winter Warmers" />
+      <div class="collection-info">
+        <h3>Winter Warmers</h3>
+        <p>Cozy and stylish for the cold season.</p>
+      </div>
+    </article>
+    <article class="collection-card" tabindex="0">
+      <img src="https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=400&q=80" alt="Casual Everyday" />
+      <div class="collection-info">
+        <h3>Casual Everyday</h3>
+        <p>Comfortable and trendy daily wear.</p>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="about" id="about" aria-label="About us section">
+  <div class="about-text">
+    <h2>About Kmart</h2>
+    <p>Founded with the vision of bringing modern fashion to women and kids, Kmart has been a trusted name for over a decade. Our passion is creating beautiful, comfortable, and affordable clothing that empowers our customers every day.</p>
+    <p>We believe in sustainable fashion, quality fabrics, and timeless designs that suit your lifestyle and personality. Join us on this journey of style and confidence.</p>
+  </div>
+  <div class="about-image" tabindex="0" aria-label="About Kmart team and products">
+    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=700&q=80" alt="Kmart Team and Products" />
+  </div>
+</section>
+
+<section class="products-section" id="products" aria-label="Products listing">
+  <div class="products-header">
+    <h2>Featured Products</h2>
+    <div class="filter-group" role="group" aria-label="Filter products">
+      <select id="categoryFilter" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+        <option value="women">Women</option>
+        <option value="kids">Kids</option>
+        <option value="accessories">Accessories</option>
+      </select>
+      <select id="priceFilter" aria-label="Filter by price range">
+        <option value="all">All Prices</option>
+        <option value="0-25">Under $25</option>
+        <option value="25-50">$25 to $50</option>
+        <option value="50-100">$50 to $100</option>
+      </select>
+    </div>
+  </div>
+  <div class="products-grid" aria-live="polite" aria-atomic="true">
+    <!-- Product cards inserted by JS -->
+  </div>
+</section>
+
+<section class="testimonials" id="testimonials" aria-label="Customer testimonials">
+  <h2>What Our Customers Say</h2>
+  <button class="testimonials-arrow left" aria-label="Previous testimonial" tabindex="0">&#10094;</button>
+  <button class="testimonials-arrow right" aria-label="Next testimonial" tabindex="0">&#10095;</button>
+  <div class="testimonials-slider" tabindex="0" aria-roledescription="carousel">
+    <article class="testimonial-card active" aria-live="pol
+    <section class="testimonials" id="testimonials" aria-label="Customer testimonials">
+      <h2>What Our Customers Say</h2>
+      <button class="testimonials-arrow left" aria-label="Previous testimonial" tabindex="0">&#10094;</button>
+      <button class="testimonials-arrow right" aria-label="Next testimonial" tabindex="0">&#10095;</button>
+      <div class="testimonials-slider" tabindex="0" aria-roledescription="carousel">
+        <article class="testimonial-card active" aria-live="polite">
+          <p>"I absolutely love the Spring Blossom collection! The fabric is so soft and the colors are vibrant. Kmart really understands style and comfort."</p>
+          <h3>- Anna Smith</h3>
+        </article>
+        <article class="testimonial-card">
+          <p>"The kids’ summer collection is adorable and durable. My daughter wears the dresses every day, and they still look brand new."</p>
+          <h3>- Michael Lee</h3>
+        </article>
+        <article class="testimonial-card">
+          <p>"The customer service at Kmart is excellent. They helped me choose the perfect outfit for my wedding anniversary."</p>
+          <h3>- Priya Patel</h3>
+        </article>
+      </div>
+    </section>
+    
+    <section class="newsletter" id="newsletter" aria-label="Newsletter subscription">
+      <h2>Subscribe to Our Newsletter</h2>
+      <form class="newsletter-form" aria-describedby="newsletter-desc">
+        <p id="newsletter-desc">Get the latest updates, exclusive offers, and fashion tips delivered straight to your inbox.</p>
+        <input type="email" placeholder="Enter your email address" aria-label="Email address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
+    
+    <footer>
+      <div class="footer-container">
+        <div class="footer-col">
+          <h3>About Kmart</h3>
+          <p>Kmart is committed to providing the best fashion experience for women and kids. Quality and style are at the heart of everything we do.</p>
+        </div>
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="#collections">Collections</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#products">Products</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#newsletter">Subscribe</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h3>Contact Us</h3>
+          <ul>
+            <li>Email: support@kmart.com</li>
+            <li>Phone: +1 (555) 123-4567</li>
+            <li>Address: 123 Fashion St, Style City</li>
+          </ul>
+          <div class="social-icons" role="list">
+            <a href="#" aria-label="Facebook" role="listitem"><svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M12 2h2v4h-2v8h-4v-8H6V6h2V4c0-1.1.9-2 2-2h2V2z"/></svg></a>
+            <a href="#" aria-label="Twitter" role="listitem"><svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M5 15c6 0 9-5 9-9 0-.14 0-.28-.01-.42A6.36 6.36 0 0015 4.5a6.3 6.3 0 01-1.83.5A3.21 3.21 0 0014.5 3a6.38 6.38 0 01-2.03.78 3.19 3.19 0 00-5.44 2.9A9.04 9.04 0 012 3.3a3.2 3.2 0 001 4.27A3.15 3.15 0 012 7.7v.04a3.19 3.19 0 002.56 3.13 3.2 3.2 0 01-1.45.05 3.2 3.2 0 002.98 2.2A6.42 6.42 0 015 15z"/></svg></a>
+            <a href="#" aria-label="Instagram" role="listitem"><svg width="16" height="16" fill="currentColor" viewBox="0 0 16 16"><path d="M8 3a5 5 0 100 10A5 5 0 008 3zm0 8a3 3 0 110-6 3 3 0 010 6zm4.5-8.25a1 1 0 11-2 0 1 1 0 012 0z"/></svg></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        &copy; 2025 Kmart. All rights reserved.
+      </div>
+    </footer>
+    
+    <script>
+      // Mobile menu toggle
+      const hamburger = document.querySelector('.hamburger');
+      const mobileMenu = document.getElementById('mobile-menu');
+      hamburger.addEventListener('click', () => {
+        const expanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
+        hamburger.setAttribute('aria-expanded', !expanded);
+        if (mobileMenu.style.display === 'block') {
+          mobileMenu.style.display = 'none';
+        } else {
+          mobileMenu.style.display = 'block';
+        }
+      });
+    
+      // Collections carousel logic
+      const carousel = document.querySelector('.carousel');
+      const leftArrow = document.querySelector('.carousel-arrow.left');
+      const rightArrow = document.querySelector('.carousel-arrow.right');
+    
+      leftArrow.addEventListener('click', () => {
+        carousel.scrollBy({ left: -300, behavior: 'smooth' });
+      });
+    
+      rightArrow.addEventListener('click', () => {
+        carousel.scrollBy({ left: 300, behavior: 'smooth' });
+      });
+    
+      // Hero slider logic
+      const slides = document.querySelectorAll('.hero-slider .slide');
+      let currentSlide = 0;
+    
+      function showSlide(index) {
+        slides.forEach((slide, i) => {
+          slide.classList.toggle('active', i === index);
+        });
+      }
+    
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }, 6000);
+    
+      // Testimonials slider logic
+      const testimonials = document.querySelectorAll('.testimonials-slider .testimonial-card');
+      let currentTestimonial = 0;
+      const prevTestimonialBtn = document.querySelector('.testimonials-arrow.left');
+      const nextTestimonialBtn = document.querySelector('.testimonials-arrow.right');
+    
+      function showTestimonial(index) {
+        testimonials.forEach((t, i) => {
+          t.classList.toggle('active', i === index);
+        });
+      }
+    
+      prevTestimonialBtn.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      });
+    
+      nextTestimonialBtn.addEventListener('click', () => {
+        currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+        showTestimonial(currentTestimonial);
+      });
+    
+      // Products data array
+      const products = [
+        { id: 1, name: "Floral Summer Dress", category: "women", price: 45, img: "https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=400&q=80" },
+        { id: 2, name: "Kids Playful T-shirt", category: "kids", price: 15, img: "https://images.unsplash.com/photo-1542068829-1115f7259450?auto=format&fit=crop&w=400&q=80" },
+        { id: 3, name: "Classic Black Handbag", category: "accessories", price: 60, img: "https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=400&q=80" },
+        { id: 4, name: "Elegant Evening Gown", category: "women", price: 80, img: "https://images.unsplash.com/photo-1512436991641-6745cdb1723f?auto=format&fit=crop&w=400&q=80" },
+        { id: 5, name: "Kids Denim Jacket", category: "kids", price: 35, img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c?auto=format&fit=crop&w=400&q=80" },
+        { id: 6, name: "Stylish Sunglasses", category: "accessories", price: 25, img: "https://images.unsplash.com/photo-1521334884684-d80222895322?auto=format&fit=crop&w=400&q=80" }
+      ];
+    
+      const productsGrid = document.querySelector('.products-grid');
+      const categoryFilter = document.getElementById('categoryFilter');
+      const priceFilter = document.getElementById('priceFilter');
+    
+      function renderProducts() {
+        const category = categoryFilter.value;
+        const priceRange = priceFilter.value;
+        productsGrid.innerHTML = '';
+    
+        const filtered = products.filter(product => {
+          let categoryMatch = category === 'all' || product.category === category;
+          let priceMatch = false;
+    
+          if (priceRange === 'all') priceMatch = true;
+          else if (priceRange === '0-25') priceMatch = product.price <= 25;
+          else if (priceRange === '25-50') priceMatch = product.price > 25 && product.price <= 50;
+          else if (priceRange === '50-100') priceMatch = product.price > 50 && product.price <= 100;
+    
+          return categoryMatch && priceMatch;
+        });
+    
+        if(filtered.length === 0) {
+          productsGrid.innerHTML = '<p style="font-size:1.2rem; color: var(--gray-light);">No products found.</p>';
+          return;
+        }
+    
+        filtered.forEach(product => {
+          const card = document.createElement('article');
+          card.className = 'product-card';
+          card.setAttribute('tabindex', '0');
+          card.innerHTML = `
+            <img src="${product.img}" alt="${product.name}" />
+            <h3>${product.name}</h3>
+            <p>$${product.price.toFixed(2)}</p>
+            <button aria-label="Add ${product.name} to cart">Add to Cart</button>
+          `;
+          productsGrid.appendChild(card);
+        });
+      }
+    
+      categoryFilter.addEventListener('change', renderProducts);
+      priceFilter.addEventListener('change', renderProducts);
+    
+      // Initial product render
+      renderProducts();
+    
+      // Newsletter form submit handler
+      const newsletterForm = document.querySelector('.newsletter-form');
+      newsletterForm.addEventListener('submit', e => {
+        e.preventDefault();
+        const emailInput = newsletterForm.querySelector('input[type="email"]');
+        if (emailInput.validity.valid) {
+          alert(`Thank you for subscribing with ${emailInput.value}!`);
+          emailInput.value = '';
+        } else {
+          alert('Please enter a valid email address.');
+        }
+      });
+    </script>
+    
+    </body>
+    </html>
+    
